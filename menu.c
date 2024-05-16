@@ -15,10 +15,10 @@ void draw_menu(GameField *field){
         }
     }
     //title
-    draw_text(field->buffer, &font_winFreeSystem14x16, 100, field->height *0.3, 5, 80, WHITE);
-    draw_text(field->buffer, &font_winFreeSystem14x16, 180, field->height *0.3, 5, 79, WHITE);
-    draw_text(field->buffer, &font_winFreeSystem14x16, 260, field->height *0.3, 5, 78, WHITE);
-    draw_text(field->buffer, &font_winFreeSystem14x16, 340, field->height *0.3, 5, 71, WHITE);
+    draw_text(field->buffer, &font_winFreeSystem14x16, 90, field->height *0.3, 5, 80, WHITE);
+    draw_text(field->buffer, &font_winFreeSystem14x16, 170, field->height *0.3, 5, 79, WHITE);
+    draw_text(field->buffer, &font_winFreeSystem14x16, 250, field->height *0.3, 5, 78, WHITE);
+    draw_text(field->buffer, &font_winFreeSystem14x16, 330, field->height *0.3, 5, 71, WHITE);
     //press
     draw_text(field->buffer, &font_winFreeSystem14x16, 60, field->height *0.8, 2, 80, WHITE);
     draw_text(field->buffer, &font_winFreeSystem14x16, 80, field->height *0.8, 2, 82, WHITE);

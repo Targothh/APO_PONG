@@ -87,6 +87,8 @@ int main(int argc, char *argv[])
 
     draw_player(&field, 1);
     draw_player(&field, 2);
+    draw_text(buffer, &font_winFreeSystem14x16, 480/2 - 80, 10, 2, red_score, WHITE);
+    draw_text(buffer, &font_winFreeSystem14x16, 480/2 + 80, 10, 2, blue_score, WHITE);
 
     bounce_count = check_collision(&field, bounce_count, &red_score, &blue_score);
     clear_ball(&field);
