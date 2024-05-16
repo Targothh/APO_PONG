@@ -102,18 +102,18 @@ int main(int argc, char *argv[])
         for (int x = 0; x < 480; x++){
             draw_pixel(buffer, x, y, BLACK);
         }
-      draw_text(buffer, &font_winFreeSystem14x16, 100, 320 * 0.3, 4, 71, WHITE); // G
-      draw_text(buffer, &font_winFreeSystem14x16, 140, 320 * 0.3, 4, 65, WHITE); // A
-      draw_text(buffer, &font_winFreeSystem14x16, 180, 320 * 0.3, 4, 77, WHITE); // M
-      draw_text(buffer, &font_winFreeSystem14x16, 220, 320 * 0.3, 4, 69, WHITE); // E
-      draw_text(buffer, &font_winFreeSystem14x16, 250, 320 * 0.3, 4, 32, WHITE); // space
-      draw_text(buffer, &font_winFreeSystem14x16, 270, 320 * 0.3, 4, 79, WHITE); // O
-      draw_text(buffer, &font_winFreeSystem14x16, 310, 320 * 0.3, 4, 86, WHITE); // V
-      draw_text(buffer, &font_winFreeSystem14x16, 350, 320 * 0.3, 4, 69, WHITE); // E
-      draw_text(buffer, &font_winFreeSystem14x16, 390, 320 * 0.3, 4, 82, WHITE); // R
+      }
+      draw_text(buffer, &font_winFreeSystem14x16, 80, 320 * 0.3, 4, 71, WHITE); // G
+      draw_text(buffer, &font_winFreeSystem14x16, 120, 320 * 0.3, 4, 65, WHITE); // A
+      draw_text(buffer, &font_winFreeSystem14x16, 160, 320 * 0.3, 4, 77, WHITE); // M
+      draw_text(buffer, &font_winFreeSystem14x16, 200, 320 * 0.3, 4, 69, WHITE); // E
+      draw_text(buffer, &font_winFreeSystem14x16, 230, 320 * 0.3, 4, 32, WHITE); // space
+      draw_text(buffer, &font_winFreeSystem14x16, 250, 320 * 0.3, 4, 79, WHITE); // O
+      draw_text(buffer, &font_winFreeSystem14x16, 290, 320 * 0.3, 4, 86, WHITE); // V
+      draw_text(buffer, &font_winFreeSystem14x16, 330, 320 * 0.3, 4, 69, WHITE); // E
+      draw_text(buffer, &font_winFreeSystem14x16, 350, 320 * 0.3, 4, 82, WHITE); // R
       draw(buffer, parlcd_mem_base);
       break;
-    }
   } 
 
   ligh_led_line(led_base);
