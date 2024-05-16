@@ -21,25 +21,25 @@ void draw_menu(GameField *field){
     draw_text(field->buffer, &font_winFreeSystem14x16, 340, field->height *0.3, 5, 71, WHITE);
     //press
     draw_text(field->buffer, &font_winFreeSystem14x16, 120, field->height *0.8, 2, 80, WHITE);
-    draw_text(field->buffer, &font_winFreeSystem14x16, 130, field->height *0.8, 2, 82, WHITE);
-    draw_text(field->buffer, &font_winFreeSystem14x16, 140, field->height *0.8, 2, 69, WHITE);
-    draw_text(field->buffer, &font_winFreeSystem14x16, 150, field->height *0.8, 2, 83, WHITE);
-    draw_text(field->buffer, &font_winFreeSystem14x16, 160, field->height *0.8, 2, 83, WHITE);
+    draw_text(field->buffer, &font_winFreeSystem14x16, 135, field->height *0.8, 2, 82, WHITE);
+    draw_text(field->buffer, &font_winFreeSystem14x16, 150, field->height *0.8, 2, 69, WHITE);
+    draw_text(field->buffer, &font_winFreeSystem14x16, 175, field->height *0.8, 2, 83, WHITE);
+    draw_text(field->buffer, &font_winFreeSystem14x16, 190, field->height *0.8, 2, 83, WHITE);
     //green
-    draw_text(field->buffer, &font_winFreeSystem14x16, 180, field->height *0.8, 2, 71, GREEN);
-    draw_text(field->buffer, &font_winFreeSystem14x16, 190, field->height *0.8, 2, 82, GREEN);
-    draw_text(field->buffer, &font_winFreeSystem14x16, 200, field->height *0.8, 2, 69, GREEN);
-    draw_text(field->buffer, &font_winFreeSystem14x16, 210, field->height *0.8, 2, 69, GREEN);
-    draw_text(field->buffer, &font_winFreeSystem14x16, 220, field->height *0.8, 2, 78, GREEN);
+    draw_text(field->buffer, &font_winFreeSystem14x16, 220, field->height *0.8, 2, 71, GREEN);
+    draw_text(field->buffer, &font_winFreeSystem14x16, 235, field->height *0.8, 2, 82, GREEN);
+    draw_text(field->buffer, &font_winFreeSystem14x16, 250, field->height *0.8, 2, 69, GREEN);
+    draw_text(field->buffer, &font_winFreeSystem14x16, 275, field->height *0.8, 2, 69, GREEN);
+    draw_text(field->buffer, &font_winFreeSystem14x16, 290, field->height *0.8, 2, 78, GREEN);
     //to
-    draw_text(field->buffer, &font_winFreeSystem14x16, 240, field->height *0.8, 2, 84, WHITE);
-    draw_text(field->buffer, &font_winFreeSystem14x16, 250, field->height *0.8, 2, 79, WHITE);
-    //start
-    draw_text(field->buffer, &font_winFreeSystem14x16, 280, field->height *0.8, 2, 83, WHITE);
-    draw_text(field->buffer, &font_winFreeSystem14x16, 290, field->height *0.8, 2, 84, WHITE);
-    draw_text(field->buffer, &font_winFreeSystem14x16, 300, field->height *0.8, 2, 65, WHITE);
-    draw_text(field->buffer, &font_winFreeSystem14x16, 310, field->height *0.8, 2, 82, WHITE);
     draw_text(field->buffer, &font_winFreeSystem14x16, 320, field->height *0.8, 2, 84, WHITE);
+    draw_text(field->buffer, &font_winFreeSystem14x16, 335, field->height *0.8, 2, 79, WHITE);
+    //start
+    draw_text(field->buffer, &font_winFreeSystem14x16, 350, field->height *0.8, 2, 83, WHITE);
+    draw_text(field->buffer, &font_winFreeSystem14x16, 375, field->height *0.8, 2, 84, WHITE);
+    draw_text(field->buffer, &font_winFreeSystem14x16, 390, field->height *0.8, 2, 65, WHITE);
+    draw_text(field->buffer, &font_winFreeSystem14x16, 405, field->height *0.8, 2, 82, WHITE);
+    draw_text(field->buffer, &font_winFreeSystem14x16, 420, field->height *0.8, 2, 84, WHITE);
     
     draw(field->buffer, field->parlcd_mem_base);
 }
