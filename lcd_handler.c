@@ -35,9 +35,14 @@ int char_width(int ch, font_descriptor_t *font) {
   return width;
 }
  
-void draw_char(int x, int y, char ch, unsigned short color) {
-  
+void draw_scaling_pixel(uint16_t * buffer, int x, int y, int scale, uint16_t data){
+    for(int i = 0; i < scale; i++){
+        for(int j = 0; i < scale; j++){
+            draw_pixel(buffer, x+i, y+j, data);
+        }
+    }
 }
+
 void draw_text(uint16_t * buffer, font_descriptor_t *font, int x, int y, int scale,  int char_code, int color){
     int w = char_width(char_code, font);
   const font_bits_t *ptr;
