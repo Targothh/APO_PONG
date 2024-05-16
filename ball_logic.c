@@ -2,6 +2,7 @@
 
 #include "objects_init.h"
 #include "redraw_objects.h"
+#include "led_line.h"
 
 #include <stdlib.h>
 #include <time.h>
@@ -21,6 +22,7 @@ void reset_ball(GameField *field){
     ball_vec_init(field);
     draw_ball(field);
     draw(field->buffer, field->parlcd_mem_base);
+    led_line();
     sleep(5);
 }
 
