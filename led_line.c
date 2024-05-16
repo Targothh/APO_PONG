@@ -25,8 +25,8 @@ void led_line() {
 
      printf("LED val 0x%x\n", val_line);
 
-     sleep(1);
+     sleep(0.1);
   }
 
-  return 0;
+  return;
 }
