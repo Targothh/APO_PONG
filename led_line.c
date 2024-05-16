@@ -10,7 +10,7 @@
 #include "mzapo_phys.h"
 #include "mzapo_regs.h"
 
-void led_line(unsigned char *led_base) {
+void light_all_leds(unsigned char *led_base) {
     uint32_t val_line = 0xFFFFFFFF;
     *(volatile uint32_t*)(led_base + SPILED_REG_LED_LINE_o) = val_line;
     sleep(3);
@@ -27,4 +27,15 @@ void led_line(unsigned char *led_base) {
   *(volatile uint32_t*)(led_base + SPILED_REG_LED_LINE_o) = 0x00;
 
   return;
+}
+
+void ligh_led_line(unsigned char *led_base) {
+    uint32_t val_line = 0x00000001;
+    for (int i = 0; i < 30; i++) {
+        *(volatile uint32_t*)(led_base + SPILED_REG_LED_LINE_o) = val_line;
+        val_line <<= 1;
+        sleep(1);
+    }
+    *(volatile uint32_t*)(led_base + SPILED_REG_LED_LINE_o) = 0x00;
+    return;
 }

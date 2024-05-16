@@ -23,7 +23,7 @@ void reset_ball(GameField *field){
     ball_vec_init(field);
     draw_ball(field);
     draw(field->buffer, field->parlcd_mem_base);
-    led_line();
+    light_all_leds(field->led_base);
     sleep(3);
 }
 
