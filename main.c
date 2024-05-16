@@ -63,16 +63,15 @@ int main(int argc, char *argv[])
   init_game(&field, &player1, &player2, &ball, parlcd_mem_base, buffer, led_base);
 
   uint8_t red_curr = *(spiled_base + SPILED_REG_KNOBS_8BIT_o + 2);
-  uint8_t green_curr = *(spiled_base + SPILED_REG_KNOBS_8BIT_o + 1);
   uint8_t blue_curr = *(spiled_base + SPILED_REG_KNOBS_8BIT_o);
 
-  bool green_press = 0;
+  int green_press = 0;
 
   ball_vec_init(&field);
 
   while (green_press == 0){
     draw_menu(&field);
-    green_press = (green_curr>>26) & 1;
+    green_press = (*(volatile uint32_t*)(spiled_base + SPILED_REG_KNOBS_8BIT_o) >> 25) & 1;
   }
 
   while(1){

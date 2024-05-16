@@ -42,14 +42,14 @@ int check_collision(GameField *field, int bounce_count, int *red_score, int *blu
     }
 
     if((field -> ball.x + field -> ball.size) >= 480){
-        *blue_score += 1;
-        fprintf(stderr, "Blue score: %d\n", *blue_score);
+        *red_score += 1;
+        fprintf(stderr, "Red score: %d\n", *red_score);
         reset_ball(field);
     }
 
     if ((field -> ball.x) <= 0){
-        *red_score += 1;
-        fprintf(stderr, "Red score: %d\n", *red_score);
+        *blue_score += 1;
+        fprintf(stderr, "Blue score: %d\n", *blue_score);
         reset_ball(field);
     }
     
