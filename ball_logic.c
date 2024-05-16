@@ -1,3 +1,9 @@
+/**
+ * @file ball_logic.c
+ * @brief Functions for ball logic.
+*/
+
+
 #define _POSIX_C_SOURCE 200112L
 
 #include "objects_init.h"

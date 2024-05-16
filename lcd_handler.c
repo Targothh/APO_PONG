@@ -1,3 +1,8 @@
+/**
+ * @file lcd_handler.c
+ * @brief Functions for drawing on the LCD screen
+*/
+
 #include "lcd_handler.h"
 #define BLACK   0x0000
 #define WHITE   0xFFFF

@@ -1,3 +1,8 @@
+/**
+ * @file led_line.c
+ * @brief Functions for lighting up the LED line
+*/
+
 #define _POSIX_C_SOURCE 200112L
 
 #include <stdlib.h>

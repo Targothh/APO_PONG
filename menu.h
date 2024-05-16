@@ -9,6 +9,12 @@
 /**
  * @brief Draws the menu on the screen
  * @param field Pointer to the GameField structure
+ * 
+ * 
+ * This function draws the menu elements on the game field buffer to display
+ * the game's title and instructions for starting the game.
+ * 
+ * 
  */
 void draw_menu(GameField *field);
 
