@@ -24,9 +24,14 @@
 #include "redraw_objects.h"
 #include "move_objects.h"
 #include "ball_logic.h"
+#include "menu.h"
+#include "led_line.h"
 
 int main(int argc, char *argv[])
 {
+
+  int red_score = 0;
+  int blue_score = 0;
 
   /* Initialize the LCD */
   unsigned char *parlcd_mem_base;
@@ -65,15 +70,15 @@ int main(int argc, char *argv[])
 
   ball_vec_init(&field);
 
-  draw_menu(&field);
+  while (green_press == 0){
+    draw_menu(&field);
+    green_press = (green_curr>>26) & 1;
+  }
 
   while(1){
     init_background(&field, BLACK);
     clear_player(&field, 1);
     clear_player(&field,2);
-
-    green_press = (green_curr>>26) & 1;
-    printf("green press: %d\n", green_press);
 
     uint8_t red_old = red_curr;
     uint8_t blue_old = blue_curr;
@@ -84,13 +89,19 @@ int main(int argc, char *argv[])
     draw_player(&field, 1);
     draw_player(&field, 2);
 
-    bounce_count = check_collision(&field, bounce_count);
+    bounce_count = check_collision(&field, bounce_count, &red_score, &blue_score);
     clear_ball(&field);
     move_ball(&field);
     draw_ball(&field);
     draw(buffer, parlcd_mem_base);
     sleep(0.5);
+
+    if (blue_score == 11 || red_score == 11){
+      break;
+    }
   } 
+
+  ligh_led_line(led_base);
 
   return 0;
 }

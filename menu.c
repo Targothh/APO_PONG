@@ -1,6 +1,7 @@
 #include "lcd_handler.h"
 #include "objects_init.h"
 #include "mzapo_parlcd.h"
+#include "menu.h"
 
 #define BLACK   0x0000
 
@@ -12,5 +13,4 @@ void draw_menu(GameField *field){
         }
     }
     draw(field->buffer, field->parlcd_mem_base);
-    sleep(5);
 }

@@ -24,12 +24,11 @@ void reset_ball(GameField *field){
     draw_ball(field);
     draw(field->buffer, field->parlcd_mem_base);
     light_all_leds(field->led_base);
-    sleep(3);
 }
 
 
 
-int check_collision(GameField *field, int bounce_count){
+int check_collision(GameField *field, int bounce_count, int *red_score, int *blue_score){
     if(bounce_count == 2){ //postupne zrychleni hry
         field -> ball.speed_x > 0 ?  field -> ball.speed_x ++ : field -> ball.speed_x --;
         field -> ball.speed_y > 0 ?  field -> ball.speed_y ++ : field -> ball.speed_y --;
@@ -42,7 +41,15 @@ int check_collision(GameField *field, int bounce_count){
         field -> ball.speed_y = field -> ball.speed_y * -1;
     }
 
-    if((field -> ball.x + field -> ball.size) >= 480 || (field -> ball.x) <= 0){
+    if((field -> ball.x + field -> ball.size) >= 480){
+        *blue_score += 1;
+        fprintf(stderr, "Blue score: %d\n", *blue_score);
+        reset_ball(field);
+    }
+
+    if ((field -> ball.x) <= 0){
+        *red_score += 1;
+        fprintf(stderr, "Red score: %d\n", *red_score);
         reset_ball(field);
     }
     
