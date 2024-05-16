@@ -1,3 +1,8 @@
+/**
+ * @file objects_init.c
+ * @brief Functions for initializing game objects
+ */
+
 #include <stdint.h>
 #include <stdio.h>
 

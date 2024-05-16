@@ -1,3 +1,8 @@
+/**
+ * @file move_objects.c
+ * @brief Functions for moving game objects.
+ */
+
 #include <stdint.h>
 #include <stdio.h>
 

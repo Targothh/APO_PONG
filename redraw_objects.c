@@ -1,3 +1,8 @@
+/**
+ * @file objects_draw.c
+ * @brief Functions for drawing game objects on the screen
+ */
+
 #include <stdint.h>
 #include <stdio.h>
 

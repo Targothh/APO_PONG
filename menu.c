@@ -1,3 +1,8 @@
+/**
+ * @file menu.c
+ * @brief Functions for drawing and managing the game menu
+ */
+
 #include "lcd_handler.h"
 #include "objects_init.h"
 #include "mzapo_parlcd.h"

@@ -1,3 +1,8 @@
+/**
+ * @file knob_handler.c
+ * @brief Functions for handling knob input
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
