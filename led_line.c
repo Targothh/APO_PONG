@@ -10,23 +10,21 @@
 #include "mzapo_phys.h"
 #include "mzapo_regs.h"
 
-void led_line() {
-  unsigned char *mem_base = map_phys_address(SPILED_REG_BASE_PHYS, SPILED_REG_SIZE, 0);
+void led_line(unsigned char *led_base) {
+    uint32_t val_line = 0xFFFFFFFF;
+    *(volatile uint32_t*)(led_base + SPILED_REG_LED_LINE_o) = val_line;
+    sleep(3);
 
-  if (mem_base == NULL){
-    exit(1);
-  }
+//   uint32_t val_line=5;
 
-  uint32_t val_line=5;
+//   for (int i = 0; i < 30; i++) {
+//      *(volatile uint32_t*)(led_base + SPILED_REG_LED_LINE_o) = val_line;
+//      val_line<<=1;
 
-  for (int i = 0; i < 30; i++) {
-     *(volatile uint32_t*)(mem_base + SPILED_REG_LED_LINE_o) = val_line;
-     val_line<<=1;
+//      sleep(1);
+//   }
 
-     printf("LED val 0x%x\n", val_line);
-
-     sleep(0.1);
-  }
+  *(volatile uint32_t*)(led_base + SPILED_REG_LED_LINE_o) = 0x00;
 
   return;
 }

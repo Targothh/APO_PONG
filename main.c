@@ -40,6 +40,12 @@ int main(int argc, char *argv[])
     return 1;
   }
 
+  unsigned char *led_base = map_phys_address(SPILED_REG_BASE_PHYS, SPILED_REG_SIZE, 0);
+  if (led_base == NULL){
+    exit(1);
+  }
+  *(volatile uint32_t*)(led_base + SPILED_REG_LED_LINE_o) = 0x00;
+
   GameField field;
   Ball ball;
   Player player1;
@@ -48,7 +54,7 @@ int main(int argc, char *argv[])
   uint16_t *buffer;
 
   buffer = buffer_init();
-  init_game(&field, &player1, &player2, &ball, parlcd_mem_base, buffer);
+  init_game(&field, &player1, &player2, &ball, parlcd_mem_base, buffer, led_base);
 
   uint8_t red_curr = *(spiled_base + SPILED_REG_KNOBS_8BIT_o + 2);
   uint8_t blue_curr = *(spiled_base + SPILED_REG_KNOBS_8BIT_o);

@@ -13,7 +13,7 @@
 #define RED     0xF800
 #define GREEN   0x07E0
 
-void init_game(GameField *field, Player *player1, Player *player2, Ball *ball, unsigned char *parlcd_mem_base, uint16_t * buffer){
+void init_game(GameField *field, Player *player1, Player *player2, Ball *ball, unsigned char *parlcd_mem_base, uint16_t * buffer, unsigned char *led_base){
     field->width = 480;
     field->height = 320;
     field->player1 = *player1;
@@ -21,6 +21,7 @@ void init_game(GameField *field, Player *player1, Player *player2, Ball *ball, u
     field->ball = *ball;
     field->parlcd_mem_base = parlcd_mem_base;
     field->buffer = buffer;
+    field->led_base = led_base;
     init_background(field, GREEN);
     init_player(field, 1, 5, 150, 10, 50, 10);
     init_player(field, 2, 470, 150, 10, 50, 10);

@@ -24,6 +24,7 @@ typedef struct GameField {
     Ball ball;          // Míček
     unsigned char *parlcd_mem_base; // Adresa řídicího registru
     uint16_t *buffer;
+    unsigned char *led_base;
 } GameField;
 
 typedef struct GameState {
@@ -41,4 +42,4 @@ void init_player(GameField *field, int player, int x, int y, int width, int heig
 
 void init_ball(GameField *field, int x, int y, int size, int speed_x, int speed_y);
 
-void init_game(GameField *field, Player *player1, Player *player2, Ball *ball, unsigned char *parlcd_mem_base, uint16_t * buffer);
+void init_game(GameField *field, Player *player1, Player *player2, Ball *ball, unsigned char *parlcd_mem_base, uint16_t * buffer, unsigned char *led_base);

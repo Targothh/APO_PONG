@@ -1,2 +1,2 @@
 
-void led_line();
+void led_line(unsigned char *led_base);
