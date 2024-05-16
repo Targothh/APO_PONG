@@ -37,8 +37,8 @@ int char_width(int ch, font_descriptor_t *font) {
  
 void draw_scaling_pixel(uint16_t * buffer, int x, int y, int scale, uint16_t data){
     for(int i = 0; i < scale; i++){
-        for(int j = 0; i < scale; j++){
-            draw_pixel(buffer, x+i, y+j, data);
+        for(int j = 0; j < scale; j++){
+            draw_pixel(buffer,x+i,y+j,data);
         }
     }
 }
@@ -58,7 +58,7 @@ void draw_text(uint16_t * buffer, font_descriptor_t *font, int x, int y, int sca
       font_bits_t val = *ptr;
       for (j=0; j<w; j++) {
         if ((val&0x8000)!=0) {
-          draw_pixel(buffer ,x+scale*j, y+scale*i, color);
+          draw_scaling_pixel(buffer ,x+scale*j, y+scale*i, scale, color);
         }
         val<<=1;
       }

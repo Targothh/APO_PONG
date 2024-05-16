@@ -13,6 +13,9 @@ void draw_menu(GameField *field){
             draw_pixel(field->buffer, x, y, BLACK);
         }
     }
-    draw_text(field->buffer, &font_winFreeSystem14x16, 100, 100, 1, 0, WHITE);
+    draw_text(field->buffer, &font_winFreeSystem14x16, 100, field->height *0.3, 5, 80, WHITE);
+    draw_text(field->buffer, &font_winFreeSystem14x16, 180, field->height *0.3, 5, 79, WHITE);
+    draw_text(field->buffer, &font_winFreeSystem14x16, 260, field->height *0.3, 5, 78, WHITE);
+    draw_text(field->buffer, &font_winFreeSystem14x16, 340, field->height *0.3, 5, 71, WHITE);
     draw(field->buffer, field->parlcd_mem_base);
 }
