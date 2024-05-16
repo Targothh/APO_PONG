@@ -12,6 +12,7 @@
 #include <stdint.h>
 #include <time.h>
 #include <unistd.h>
+#include <stdbool.h>
 
 #include "mzapo_parlcd.h"
 #include "mzapo_phys.h"
@@ -57,14 +58,22 @@ int main(int argc, char *argv[])
   init_game(&field, &player1, &player2, &ball, parlcd_mem_base, buffer, led_base);
 
   uint8_t red_curr = *(spiled_base + SPILED_REG_KNOBS_8BIT_o + 2);
+  uint8_t green_curr = *(spiled_base + SPILED_REG_KNOBS_8BIT_o + 1);
   uint8_t blue_curr = *(spiled_base + SPILED_REG_KNOBS_8BIT_o);
 
+  bool green_press = 0;
+
   ball_vec_init(&field);
+
+  draw_menu(&field);
 
   while(1){
     init_background(&field, BLACK);
     clear_player(&field, 1);
     clear_player(&field,2);
+
+    green_press = (green_curr>>26) & 1;
+    printf("green press: %d\n", green_press);
 
     uint8_t red_old = red_curr;
     uint8_t blue_old = blue_curr;
