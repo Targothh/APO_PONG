@@ -87,6 +87,8 @@ int main(int argc, char *argv[])
 
     draw_player(&field, 1);
     draw_player(&field, 2);
+    draw_text(buffer, &font_winFreeSystem14x16, 480/2 - 40, 10, 2, 48+red_score, WHITE);
+    draw_text(buffer, &font_winFreeSystem14x16, 480/2 + 40, 10, 2, 48+blue_score, WHITE);
 
     bounce_count = check_collision(&field, bounce_count, &red_score, &blue_score);
     clear_ball(&field);
@@ -96,8 +98,22 @@ int main(int argc, char *argv[])
     sleep(0.5);
 
     if (blue_score == 11 || red_score == 11){
+      for (int y = 0; y < 320; y++){
+        for (int x = 0; x < 480; x++){
+            draw_pixel(buffer, x, y, BLACK);
+        }
+      }
+      draw_text(buffer, &font_winFreeSystem14x16, 80, 320 * 0.3, 4, 71, WHITE); // G
+      draw_text(buffer, &font_winFreeSystem14x16, 120, 320 * 0.3, 4, 65, WHITE); // A
+      draw_text(buffer, &font_winFreeSystem14x16, 160, 320 * 0.3, 4, 77, WHITE); // M
+      draw_text(buffer, &font_winFreeSystem14x16, 200, 320 * 0.3, 4, 69, WHITE); // E
+      draw_text(buffer, &font_winFreeSystem14x16, 230, 320 * 0.3, 4, 32, WHITE); // space
+      draw_text(buffer, &font_winFreeSystem14x16, 250, 320 * 0.3, 4, 79, WHITE); // O
+      draw_text(buffer, &font_winFreeSystem14x16, 290, 320 * 0.3, 4, 86, WHITE); // V
+      draw_text(buffer, &font_winFreeSystem14x16, 330, 320 * 0.3, 4, 69, WHITE); // E
+      draw_text(buffer, &font_winFreeSystem14x16, 350, 320 * 0.3, 4, 82, WHITE); // R
+      draw(buffer, parlcd_mem_base);
       break;
-    }
   } 
 
   ligh_led_line(led_base);
