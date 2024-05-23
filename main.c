@@ -119,4 +119,5 @@ int main(int argc, char *argv[])
   ligh_led_line(led_base);
 
   return 0;
+  }
 }
